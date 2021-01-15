@@ -1,4 +1,5 @@
 import AppLayout from '../../layouts/AppLayout/AppLayout'
+import ReadmeCell from '../../components/ReadmeCell'
 
 const HomePage = () => {
   return (
@@ -6,6 +7,7 @@ const HomePage = () => {
       <h1>README</h1>
       <p>Your READMEs</p>
       <p>Explore</p>
+      <ReadmeCell />
     </AppLayout>
   )
 }
