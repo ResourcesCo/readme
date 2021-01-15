@@ -1,4 +1,4 @@
-import { render, screen } from '@redwoodjs/testing'
+import { render } from '@redwoodjs/testing'
 import { Loading, Empty, Failure, Success } from './ReadmeCell'
 import { standard } from './ReadmeCell.mock'
 
@@ -28,7 +28,7 @@ describe('ReadmeCell', () => {
 
   it('renders Success successfully', async () => {
     expect(() => {
-      render(<Success readme={standard().readme} />)
+      render(<Success redwood={standard().redwood} />)
     }).not.toThrow()
   })
 })
