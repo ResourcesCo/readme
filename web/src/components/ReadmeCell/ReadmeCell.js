@@ -25,7 +25,9 @@ const processor = unified()
 export const Success = ({ redwood: { currentUser } }) => {
   const text = `# Hello, world!
 
-  This is rendered using Remark and React! 🎉`
+This is rendered using Remark and React! 🎉
+
+[Alert](javascript:alert('🚨'))`
 
   return (
     <div>

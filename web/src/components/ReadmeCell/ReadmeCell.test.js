@@ -31,4 +31,11 @@ describe('ReadmeCell', () => {
       render(<Success redwood={standard().redwood} />)
     }).not.toThrow()
   })
+
+  it('sanitizes alert', async () => {
+    const link = await render(
+      <Success redwood={standard().redwood} />
+    ).findByText('Alert')
+    expect(link.outerHTML).not.toContain('javascript:')
+  })
 })
