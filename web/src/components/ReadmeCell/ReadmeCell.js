@@ -1,6 +1,7 @@
 import unified from 'unified'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
+import rehypeSanitize from 'rehype-sanitize'
 import rehypeReact from 'rehype-react'
 
 export const QUERY = gql`
@@ -20,6 +21,7 @@ export const Failure = ({ error }) => <div>Error: {error.message}</div>
 const processor = unified()
   .use(remarkParse)
   .use(remarkRehype)
+  .use(rehypeSanitize)
   .use(rehypeReact, { createElement: React.createElement })
 
 export const Success = ({ redwood: { currentUser } }) => {
