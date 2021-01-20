@@ -3,6 +3,8 @@ export default {
     text: '#000',
     background: '#fff',
     primary: '#33e',
+    secondary: '#30c',
+    muted: '#f6f6f6',
   },
   fonts: {
     body: 'system-ui, sans-serif',
@@ -66,6 +68,20 @@ export default {
       fontFamily: 'body',
       fontWeight: 'body',
       lineHeight: 'body',
+    },
+    table: {
+      borderCollapse: 'collapse',
+    },
+    tr: {},
+    th: {
+      fontFamily: 'body',
+      border: '1px solid #bbb',
+      p: 1,
+    },
+    td: {
+      fontFamily: 'body',
+      border: '1px solid #bbb',
+      p: 1,
     },
   },
 }
