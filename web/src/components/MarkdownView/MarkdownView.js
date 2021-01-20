@@ -7,6 +7,25 @@ import remarkRehype from 'remark-rehype'
 import rehypeSanitize from 'rehype-sanitize'
 import rehypeReact from 'rehype-react'
 
+const filterWhitespace = (node) =>
+  !(typeof node === 'string' && node.trim() === '')
+
+const Table = ({ children, ...props }) => (
+  <Themed.table {...props}>{children.filter(filterWhitespace)}</Themed.table>
+)
+
+const TableHead = ({ children, ...props }) => (
+  <thead {...props}>{children.filter(filterWhitespace)}</thead>
+)
+
+const TableBody = ({ children, ...props }) => (
+  <tbody {...props}>{children.filter(filterWhitespace)}</tbody>
+)
+
+const TableRow = ({ children, ...props }) => (
+  <Themed.tr {...props}>{children.filter(filterWhitespace)}</Themed.tr>
+)
+
 const processor = unified()
   .use(remarkParse)
   .use(remarkGfm)
@@ -21,8 +40,10 @@ const processor = unified()
       p: Themed.p,
       ul: Themed.ul,
       ol: Themed.ol,
-      table: Themed.table,
-      tr: Themed.tr,
+      table: Table,
+      thead: TableHead,
+      tbody: TableBody,
+      tr: TableRow,
       th: Themed.th,
       td: Themed.td,
     },
