@@ -58,7 +58,7 @@ const makeBackground = ({ width, height }) => {
         throw new Error('Unexpected error: distance outside bounds')
       }
     })
-    .map(([x, y], i) => `<circle cx='${x}' cy='${y}' r='1' fill='black' />`)
+    .map(([x, y]) => `<circle cx='${x}' cy='${y}' r='1' fill='black' />`)
   const backgroundSvg = `<svg width='100%' height='100%' viewBox='0 0 ${width} ${height}' xmlns='http://www.w3.org/2000/svg'>
     ${dots.join('\n')}
   </svg>`
