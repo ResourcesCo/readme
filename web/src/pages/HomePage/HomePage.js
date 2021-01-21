@@ -1,16 +1,24 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import AppLayout from '../../layouts/AppLayout/AppLayout'
+import { useAuth } from '@redwoodjs/auth'
+import ReadmeListCell from '../../components/ReadmeListCell'
 import ReadmeCell from '../../components/ReadmeCell'
 
 const HomePage = () => {
+  const { isAuthenticated } = useAuth()
   return (
-    <AppLayout>
+    <>
       <h1 sx={{ font: 'heading' }}>README</h1>
-      <p>Your READMEs</p>
-      <p>Explore</p>
+      {isAuthenticated && (
+        <>
+          <h2>Your READMEs</h2>
+          <ReadmeListCell showCreateNew={true} />
+        </>
+      )}
+      <h2>Explore</h2>
+      <ReadmeListCell />
       <ReadmeCell />
-    </AppLayout>
+    </>
   )
 }
 

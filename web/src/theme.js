@@ -22,6 +22,11 @@ export default {
     body: 1.5,
     heading: 1.8,
   },
+  cards: {
+    primary: {
+      maxWidth: 256,
+    },
+  },
   styles: {
     h1: {
       fontSize: 36,

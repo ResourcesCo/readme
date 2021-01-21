@@ -52,7 +52,7 @@ Here is a table:
 [Alert](javascript:alert('🚨'))`
 
   return (
-    <div sx={{ p: 4 }}>
+    <div>
       <MarkdownView value={markdown} />
       <pre>{JSON.stringify(currentUser, null, 2)}</pre>
     </div>
