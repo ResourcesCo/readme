@@ -1,4 +1,7 @@
 export default {
+  root: {
+    boxSizing: 'border-box',
+  },
   colors: {
     text: '#000',
     background: '#fff',
