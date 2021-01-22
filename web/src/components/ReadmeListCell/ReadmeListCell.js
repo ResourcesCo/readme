@@ -76,14 +76,14 @@ export const CreateNewCard = () => {
       sx={{
         ...(width && height && makeBackground({ width, height })),
         backgroundRepeat: 'no-repeat',
-        p: 2,
       }}
     >
-      <Link to={routes.new()}>
-        <Flex sx={{ p: 3 }}>
-          <MdNoteAdd sx={{ pr: 1 }} />
-          <Box>New README</Box>
-        </Flex>
+      <Link
+        to={routes.new()}
+        sx={{ display: 'flex', p: 3, textDecoration: 'none', color: 'text' }}
+      >
+        <MdNoteAdd sx={{ pr: 1 }} />
+        <Box>New README</Box>
       </Link>
     </Card>
   )
