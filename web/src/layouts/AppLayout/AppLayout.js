@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Themed, Heading } from 'theme-ui'
 import { useAuth } from '@redwoodjs/auth'
+import { navigate, routes } from '@redwoodjs/router'
 
 const AppLayout = ({ title = 'README', children }) => {
   const { logIn, logOut, isAuthenticated, currentUser } = useAuth()
@@ -14,9 +15,25 @@ const AppLayout = ({ title = 'README', children }) => {
           </div>
           <div sx={{ textAlign: 'right' }}>
             {isAuthenticated && <span sx={{ mx: 2 }}>{currentUser.email}</span>}
-            <button onClick={isAuthenticated ? logOut : logIn}>
-              {isAuthenticated ? 'Log Out' : 'Log In'}
-            </button>
+            {isAuthenticated ? (
+              <button
+                onClick={async () => {
+                  await logOut()
+                  navigate(routes.home())
+                }}
+              >
+                Log Out
+              </button>
+            ) : (
+              <button
+                onClick={async () => {
+                  await logIn()
+                  navigate(routes.home())
+                }}
+              >
+                Log In
+              </button>
+            )}
           </div>
         </div>
         <main>{children}</main>
