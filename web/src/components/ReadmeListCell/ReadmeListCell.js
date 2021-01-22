@@ -80,9 +80,15 @@ export const CreateNewCard = () => {
     >
       <Link
         to={routes.new()}
-        sx={{ display: 'flex', p: 3, textDecoration: 'none', color: 'text' }}
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          p: 3,
+          textDecoration: 'none',
+          color: 'text',
+        }}
       >
-        <MdNoteAdd sx={{ pr: 1 }} />
+        <MdNoteAdd sx={{ pr: 1, fontSize: 4 }} />
         <Box>New README</Box>
       </Link>
     </Card>
