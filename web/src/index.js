@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom'
 import { RedwoodProvider, FatalErrorBoundary } from '@redwoodjs/web'
 import { ThemeProvider } from 'theme-ui'
 import FatalErrorPage from 'src/pages/FatalErrorPage'
-import AppLayout from './layouts/AppLayout/AppLayout'
 
 import theme from './theme'
 import Routes from 'src/Routes'
@@ -18,9 +17,7 @@ ReactDOM.render(
     <AuthProvider client={netlifyIdentity} type="netlify">
       <RedwoodProvider>
         <ThemeProvider theme={theme}>
-          <AppLayout>
-            <Routes />
-          </AppLayout>
+          <Routes />
         </ThemeProvider>
       </RedwoodProvider>
     </AuthProvider>

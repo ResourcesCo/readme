@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { jsx, Textarea } from 'theme-ui'
+import AppLayout from '../../layouts/AppLayout/AppLayout'
 
 const ReadmePage = () => {
   return (
-    <>
-      <h1>New Readme</h1>
-      <Textarea />
-    </>
+    <AppLayout title="New Readme">
+      <Textarea sx={{ height: '80vh' }} />
+    </AppLayout>
   )
 }
 

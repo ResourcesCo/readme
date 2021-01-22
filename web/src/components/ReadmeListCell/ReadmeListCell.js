@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Card, Flex, Box } from 'theme-ui'
+import { jsx, Card, Box } from 'theme-ui'
 import { useResizeDetector } from 'react-resize-detector'
 import { MdNoteAdd } from 'react-icons/md'
 import { Link, routes } from '@redwoodjs/router'
